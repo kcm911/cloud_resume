@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#visitor-counter-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a; /* dark footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+    transition: all 0.5s ease; /* smooth changes */
+  }
+  
+  #visitor-counter-text {
+    display: inline-block;
+    transition: all 0.5s ease; /* smooth fade/scroll effect */
+  }
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    margin-bottom: 20px;
+}
+
+.title {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.contact {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+/* Sections */
+section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section p {
+    text-align: justify;
+    line-height: 1.3;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 5px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Flex row for title + date */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dates */
+.date {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+/* Counter */
+.counter {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date {
+        margin-top: 3px;
+    }
+}

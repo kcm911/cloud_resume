@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khant Chan Myae - CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="visitor-counter-container">
+        <p id="visitor-counter-text">Loading visitor count...</p>
+      </div>
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Khant Chan Myae</h1>
+            <p class="contact">
+                📍 Gateshead |
+                📧 khantchanm@gmail.com |
+                07810810178 |
+                <a href=https://www.linkedin.com/in/khantchanmyae/ target="_blank">LinkedIn Profile Link</a>
+                
+            </p>
+        </header>
+
+        <!-- Profile -->
+        <section>
+            <h2>Profile</h2>
+            <p>
+                Computer Systems Engineering graduate with experience in troubleshooting, system support, and cross-team collaboration within a fast-paced environment at Amazon. Skilled in identifying issues, supporting end users, and managing access control, with a technical background in web development using HTML, CSS, PHP, and MySQL. Demonstrates strong problem-solving and communication skills, with a growing interest in cloud technologies and a commitment to learning platforms such as AWS, Azure, and Google Cloud. Eager to contribute to reliable, scalable cloud-based solutions in a support-focused role.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>AWS Cloud</li>
+                <li>Networking</li>
+                <li>HTML & CSS</li>
+            </ul>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2>Projects</h2>
+
+            <div class="row">
+                <span><strong>Cloud Resume Project</strong></span>
+                <span class="date">2026</span>
+            </div>
+
+            <ul>
+                <li>Built a serverless cloud-hosted resume website with AWS S3, Lambda, API Gateway, and DynamoDB, including a live visitor counter, demonstrating full-stack cloud and frontend skills.</li>
+            </ul>
+
+            <div class="row">
+                <span><strong>Hand Gesture Recognition - AI Coursework</strong></span>
+                <span class="date">2024</span>
+            </div>
+            <p>University of Sunderland</p>
+            <ul>
+                <li>Created a hand gesture recognition system by building and training a neural network with a custom
+                    dataset, achieving accurate real-time gesture recognition.</li>
+            </ul>
+
+            <div class="row">
+                <span><strong>Student Result Management System</strong></span>
+                <span class="date">2023</span>
+            </div>
+            <p>Diploma Project</p>
+            <ul>
+                <li>Developed a full-stack web application using HTML, CSS, PHP , and MySQL to manage student results.
+                    Implemented data manipulation techniques to retrieve and present information from multiple tables
+                    efficiently.</li>
+            </ul>
+        </section>
+
+<!-- Experience -->
+<section>
+    <h2>Experience</h2>
+
+    <div class="row">
+        <span><strong>Cloud Support Specialist</strong></span>
+        <span class="date">January 2026 – Present</span>
+    </div>
+    <p>Correlation One - Remote</p>
+    <ul>
+        <li>23-week intensive training covering Networking, Linux Administration, Network Security, and AWS
+            Cloud Fundamentals</li>
+        <li>Hands-on labs in cloud storage, system troubleshooting, and infrastructure concepts</li>
+        <li>Practical case-based learning aligned with industry requirements</li>
+    </ul>
+
+    <div class="row">
+        <span><strong>Amazon Warehouse Associate</strong></span>
+        <span class="date">2024 – Present</span>
+    </div>
+
+    <ul>
+        <li>Amnesty Floor Monitor Supported associates across multiple departments by troubleshooting
+            workstation issues, coordinating solutions, and escalating incidents via Slack. Ensured smooth
+            workflow, maintained product</li>
+        <li>Pack / Pick / Stow accurately, following protocols and safety standards. Identified and reported
+            workflow or system issues for quick resolution. Collaborated with team members to maintain efficiency
+            and output quality. Maintained attention to detail and time management in a high-volume environment.</li>
+    </ul>
+</section>
+
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+
+            <div class="row">
+                <span><strong>Cloud Support Specialist</strong></span>
+                <span class="date">January 2026 – Present</span>
+            </div>
+            <p>Correlation One - Remote</p>
+            
+
+            <div class="row">
+                <span><strong>BSc Computer Systems Engineering</strong></span>
+                <span class="date">2023 – 2024</span>
+            </div>
+            <p>University of Sunderland - Sunderland, United Kingdom | 2:1</p>
+        </section>
+
+        <!-- Visitor Counter -->
+        <p class="counter">
+            Visitors: <span id="counter">Loading...</span>
+        </p>
+
+    </div>
+
+    <script>
+        const visitorName = prompt("Welcome! What's your name?");
+        const counterElement = document.getElementById("visitor-counter-text");
+        
+        // Function to update the counter with simple fade/scroll effect
+        function updateCounter(count) {
+          counterElement.style.opacity = 0; // fade out
+          setTimeout(() => {
+            counterElement.innerText = `Thank You for Viewing the CV ${visitorName}, You are Visitor ${count}`;
+            counterElement.style.opacity = 1; // fade in
+          }, 300); // 300ms fade duration
+        }
+        
+        // Fetch visitor count from API
+        function fetchVisitorCount() {
+          fetch("https://cdpn6gk1nh.execute-api.eu-north-1.amazonaws.com/counter")
+            .then(res => res.json())
+            .then(data => updateCounter(data.count))
+            .catch(err => console.error(err));
+        }
+        
+        // Initial fetch
+        fetchVisitorCount();
+        </script>
+
+</body>
+</html>
